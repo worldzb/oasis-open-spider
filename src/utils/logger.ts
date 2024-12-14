@@ -1,31 +1,31 @@
-// import { config } from "../config.js";
+import { config } from "../config.js";
 import { createLogger, format, transports } from "winston";
-// import path from "path";
+import path from "path";
 import chalk from "chalk";
 
-const pathOption: (typeof transports.File)[] = [];
+let pathOption: (typeof transports.File)[] = [];
 
 // 日志输出目录
-// if (config.USE_LOG_FILE) {
-//   try {
-//     pathOption = [
-//       new transports.File({
-//         filename: path.resolve("logs/error.log"),
-//         level: "error",
-//         maxsize: 1024 * 1024,
-//         maxFiles: 1,
-//       }),
-//       new transports.File({
-//         filename: path.resolve("logs/logger.log"),
-//         maxsize: 1024 * 1024,
-//         maxFiles: 1,
-//       }),
-//     ];
-//   } catch (error) {
-//     console.error("Failed to initialize log files. Logging to a file will be skipped.", error);
-//     pathOption = [];
-//   }
-// }
+if (config.USE_LOG_FILE) {
+  try {
+    pathOption = [
+      new transports.File({
+        filename: path.resolve("logs/error.log"),
+        level: "error",
+        maxsize: 1024 * 1024,
+        maxFiles: 1,
+      }),
+      new transports.File({
+        filename: path.resolve("logs/logger.log"),
+        maxsize: 1024 * 1024,
+        maxFiles: 1,
+      }),
+    ];
+  } catch (error) {
+    console.error("Failed to initialize log files. Logging to a file will be skipped.", error);
+    pathOption = [];
+  }
+}
 
 // 定义不同日志级别的彩色块
 const levelColors: { [key: string]: string } = {
