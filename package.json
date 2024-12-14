@@ -32,7 +32,8 @@
     "dev": "cross-env NODE_ENV=development tsx watch --no-cache src/index.ts",
     "dev:cache": "cross-env NODE_ENV=development tsx watch src/index.ts",
     "build": "tsc --project tsconfig.json",
-    "start": "cross-env NODE_ENV=development tsx dist/index.js"
+    "start": "cross-env NODE_ENV=development tsx dist/index.js",
+    "vercel": "vercel dev"
   },
   "type": "module",
   "dependencies": {
@@ -51,6 +52,7 @@
     "node-cache": "^5.1.2",
     "rss-parser": "^3.13.0",
     "user-agents": "^1.1.379",
+    "vercel": "^39.2.2",
     "winston": "^3.17.0"
   },
   "devDependencies": {

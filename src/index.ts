@@ -1,4 +1,5 @@
 import { serve } from "@hono/node-server";
+import { handle } from "@hono/node-server/vercel";
 import { config } from "./config.js";
 import logger from "./utils/logger.js";
 import app from "./app.js";
@@ -22,4 +23,4 @@ if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "docker")
   serveHotApi(config.PORT);
 }
 
-export default serveHotApi;
+export default handle(app);
