@@ -17,7 +17,7 @@ const getWereadID = (bookId: string) => {
     let fa: (string | any[])[];
     if (/^\d*$/.test(bookId)) {
       // 如果书籍 ID 只包含数字，则将其拆分成长度为 9 的子字符串，并转换为十六进制表示
-      const chunks = [];
+      const chunks:any[] = [];
       for (let i = 0; i < bookId.length; i += 9) {
         const chunk = bookId.substring(i, i + 9);
         chunks.push(parseInt(chunk).toString(16));

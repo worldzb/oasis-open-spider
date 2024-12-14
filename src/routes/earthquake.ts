@@ -35,7 +35,7 @@ const getList = async (noCache: boolean) => {
   return {
     ...result,
     data: list.map((v: RouterType["earthquake"]) => {
-      const contentBuilder = [];
+      const contentBuilder:any[] = [];
       const { NEW_DID, LOCATION_C, M } = v;
       for (const mappingsKey in mappings) {
         contentBuilder.push(
