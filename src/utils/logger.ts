@@ -71,7 +71,7 @@ if (process.env.NODE_ENV !== "production") {
     logger.add(
       new transports.Console({
         format: format.combine(format.colorize(), consoleFormat) as any,
-      }),
+      } as any),
     );
   } catch (error) {
     console.error("Failed to add console transport. Console logging will be skipped.", error);
