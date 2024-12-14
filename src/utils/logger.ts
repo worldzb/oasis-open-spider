@@ -61,7 +61,7 @@ const logger = createLogger({
     format.errors({ stack: true }),
     format.splat(),
     format.json(),
-  ),
+  ) as any,
   transports: pathOption,
 });
 
