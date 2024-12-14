@@ -70,7 +70,7 @@ if (process.env.NODE_ENV !== "production") {
   try {
     logger.add(
       new transports.Console({
-        format: format.combine(format.colorize(), consoleFormat),
+        format: format.combine(format.colorize(), consoleFormat) as any,
       }),
     );
   } catch (error) {
