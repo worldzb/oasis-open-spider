@@ -4,8 +4,11 @@ import { Hono } from "hono";
 import getRSS from "./utils/getRSS.js";
 import path from "path";
 import fs from "fs";
+import addTagsRespones from "./middleware/addTagsRespones.js";
 
 const app = new Hono();
+
+app.use("*", addTagsRespones)
 
 // 模拟 __dirname
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -15,7 +18,9 @@ let allRoutePath: Array<string> = [];
 const routersDirName: string = "routes";
 
 // 排除路由
-const excludeRoutes: Array<string> = [];
+const excludeRoutes: Array<string> = [
+  
+];
 
 // 建立完整目录路径
 const routersDirPath = path.join(__dirname, routersDirName);
@@ -106,7 +111,7 @@ app.get("/all", (c) =>
             message: "This interface is temporarily offline",
           };
         }
-        return { name: path, path: `/${path}` };
+        return { name: path, path: `/${path}`, icon: `/${path}` };
       }),
     },
     200,

@@ -50,6 +50,7 @@
     "ioredis": "^5.4.1",
     "md5": "^2.3.0",
     "node-cache": "^5.1.2",
+    "nodejieba": "^3.4.4",
     "rss-parser": "^3.13.0",
     "user-agents": "^1.1.379",
     "vercel": "^39.2.2",

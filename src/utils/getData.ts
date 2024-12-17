@@ -55,7 +55,7 @@ export const get = async (options: Get) => {
       if (cachedData) {
         logger.info("💾 [CHCHE] The request is cached");
         return {
-          fromCache: true,
+          fromCache: false,
           updateTime: cachedData.updateTime,
           data: cachedData.data,
         };
