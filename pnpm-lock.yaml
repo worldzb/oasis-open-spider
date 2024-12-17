@@ -45,7 +45,7 @@ dependencies:
     specifier: ^5.1.2
     version: 5.1.2
   nodejieba:
-    specifier: ^3.4.4
+    specifier: ^3.4.3
     version: 3.4.4
   rss-parser:
     specifier: ^3.13.0
