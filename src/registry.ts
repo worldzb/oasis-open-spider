@@ -4,11 +4,11 @@ import { Hono } from "hono";
 import getRSS from "./utils/getRSS.js";
 import path from "path";
 import fs from "fs";
-import addTagsRespones from "./middleware/addTagsRespones.js";
+// import addTagsRespones from "./middleware/addTagsRespones.js";
 
 const app = new Hono();
 
-app.use("*", addTagsRespones)
+// app.use("*", addTagsRespones)
 
 // 模拟 __dirname
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
