@@ -4,7 +4,9 @@ import { Hono } from "hono";
 import getRSS from "./utils/getRSS.js";
 import path from "path";
 import fs from "fs";
+import addTagsRespones from "./middleware/addTagsRespones.js";
 const app = new Hono();
+app.use("*", addTagsRespones);
 // 模拟 __dirname
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // 路由数据
@@ -96,7 +98,7 @@ app.get("/all", (c) => c.json({
                 message: "This interface is temporarily offline",
             };
         }
-        return { name: path, path: `/${path}` };
+        return { name: path, path: `/${path}`, icon: `/${path}` };
     }),
 }, 200));
 export default app;

@@ -26,7 +26,7 @@ const getList = async (noCache) => {
                 title: v.word,
                 desc: v.note || key,
                 author: v.flag_desc,
-                timestamp: getTime(v.onboard_time),
+                timestamp: getTime(v.onboard_time) || new Date().getTime(),
                 hot: v.num,
                 url: `https://s.weibo.com/weibo?q=${encodeURIComponent(key)}&t=31&band_rank=1&Refer=top`,
                 mobileUrl: `https://s.weibo.com/weibo?q=${encodeURIComponent(key)}&t=31&band_rank=1&Refer=top`,
